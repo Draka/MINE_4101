@@ -15,3 +15,6 @@
  ```
  conga install gdal
  ```
+
+ # Soporte para archivos grandes
+  * Ir a https://git-lfs.github.com/ para descargar la versión

@@ -1,7 +1,131 @@
 extends layout
 
 block content
-  h1= title
-  p Rest Api, Prueba de Modelos
-  p Ver ejemplo en: 
-    a(href='/example') /exmaple
+  main.container
+    .p-4.p-md-5.mb-4.text-white.rounded.bg-dark.mt-4
+      .row
+        .col-md-6.px-0
+          h1.display-4.fst-italic Modelo de predicción de la amenaza por movimientos en masa
+          p.lead.my-3
+            | Los procesos de remoción en masa son movimientos de masas de suelo o roca que se deslizan comportándose como una unidad en su recorrido.
+        .col-md-6.px-0
+          img(src="/images/ima1.jpg", class="img-fluid")
+    .row.mb-2
+      .col-md-12
+        .row.g-0.border.rounded.overflow-hidden.flex-md-row.mb-4.shadow-sm.h-md-250.position-relative
+          .col.p-4.d-flex.flex-column.position-static
+            strong.d-inline-block.mb-2.text-primary post
+            h3.mb-0 REST API
+            .mb-1.text-muted 
+            p.card-text.mb-auto
+              | Ejemplo para usar peticiones REST al módelo
+            a.stretched-link(href='/example') Leer más
+          .col-auto.d-none.d-lg-block
+            img(src="/images/rest.png", class="img-fluid" style="max-height: 200px;")
+    .row.g-5.mb-4
+      .col-md-8
+        h3.pb-4.mb-4.fst-italic.border-bottom
+          | Formulario de predicción
+        article.blog-post
+          p
+            | El siguiente formulario tiene la finalidad de generar la probabilidad de la ocurrencia de peligro.
+          hr
+          form(action="/model" method='post')
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a1') Distancia_Fallas
+              .col-sm-10
+                input#a1.form-control(type='text' name='a1')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a2') DTM
+              .col-sm-10
+                input#a2.form-control(type='text' name='a2')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a3') Slope
+              .col-sm-10
+                input#a3.form-control(type='text' name='a3')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a4') TPI
+              .col-sm-10
+                input#a4.form-control(type='text' name='a4')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a5') Rugosidad
+              .col-sm-10
+                input#a5.form-control(type='text' name='a5')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a6') Distancia_Fallas DTM
+              .col-sm-10
+                input#a6.form-control(type='text' name='a6')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a6') Distancia_Fallas NDVI
+              .col-sm-10
+                input#a7.form-control(type='text' name='a7')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a8') Distancia_Fallas TPI
+              .col-sm-10
+                input#a8.form-control(type='text' name='a8')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a9') Distancia_Fallas Rugosidad
+              .col-sm-10
+                input#a9.form-control(type='text' name='a9')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a10') Distancia_Vias^2
+              .col-sm-10
+                input#a10.form-control(type='text' name='a10')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a11') Distancia_Vias DTM
+              .col-sm-10
+                input#a11.form-control(type='text' name='a11')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a12') Distancia_Vias NDVI
+              .col-sm-10
+                input#a12.form-control(type='text' name='a12')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a13') Distancia_Vias TPI
+              .col-sm-10
+                input#a13.form-control(type='text' name='a13')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a14') DTM^2
+              .col-sm-10
+                input#a14.form-control(type='text' name='a14')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a15') DTM TPI
+              .col-sm-10
+                input#a15.form-control(type='text' name='a15')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a16') NDVI^2
+              .col-sm-10
+                input#a16.form-control(type='text' name='a16')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a17') NDVI Slope
+              .col-sm-10
+                input#a17.form-control(type='text' name='a17')
+
+            .mb-3.row
+              label.col-sm-2.col-form-label(for='a18') Slope^2
+              .col-sm-10
+                input#a18.form-control(type='text' name='a18')
+            
+            nav.blog-pagination(aria-label='Pagination')
+              button.btn.btn-outline-primary(type='submit') Predecir
+      .col-md-4
+        .position-sticky(style='top: 2rem;')
+          .p-4.mb-3.bg-light.rounded
+            h4.fst-italic EL MUNICIPIO DE PASTO - NARIÑO
+            p.mb-0
+              |  En la última decada, la población ha enfrentado 79 grandes desastres asociados a la ocurrencia de un movimiento en masa
